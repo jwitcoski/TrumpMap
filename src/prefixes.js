@@ -1,0 +1,22 @@
+/** Longest prefixes first so "Gulf of " wins over a shorter "Gulf ". */
+export const PREFIXES = [
+  { prefix: "Republic of ", label: "Republic of America" },
+  { prefix: "Isle of ", label: "Isle of America" },
+  { prefix: "Gulf of ", label: "Gulf of America" },
+  { prefix: "Sea of ", label: "Sea of America" },
+  { prefix: "Bay of ", label: "Bay of America" },
+  { prefix: "United ", label: "United America" },
+  { prefix: "Mount ", label: "Mount America" },
+  { prefix: "North ", label: "North America" },
+  { prefix: "South ", label: "South America" },
+  { prefix: "Great ", label: "Great America" },
+  { prefix: "Saint ", label: "Saint America" },
+  { prefix: "Lake ", label: "Lake America" },
+  { prefix: "East ", label: "East America" },
+  { prefix: "West ", label: "West America" },
+  { prefix: "Fort ", label: "Fort America" },
+  { prefix: "Port ", label: "Port America" },
+  { prefix: "Cape ", label: "Cape America" },
+  { prefix: "New ", label: "New America" },
+  { prefix: "The ", label: "The America" },
+];
