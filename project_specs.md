@@ -12,4 +12,4 @@ Prefix + America labels on MapTiler streets-v4 via @maptiler/sdk, following MapT
 
 ## Next
 
-- Restrict the MapTiler key by origin; rotate if it was pasted into chat.
+- Confirm GitHub Pages at https://jwitcoski.github.io/TrumpMap/ and restrict the MapTiler key origin.

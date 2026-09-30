@@ -2,6 +2,10 @@
 
 Vanilla Vite app using [@maptiler/sdk](https://www.npmjs.com/package/@maptiler/sdk) `4.0.2` and **streets-v4** (`MapStyle.STREETS`). Place labels keep a geographic prefix and replace the rest with America.
 
+**Live:** [https://jwitcoski.github.io/TrumpMap/](https://jwitcoski.github.io/TrumpMap/)
+
+Restrict the MapTiler key HTTP origin to `jwitcoski.github.io` (and `localhost` for local dev).
+
 Follows [How to use MapTiler with AI](https://docs.maptiler.com/guides/ai/how-to-use-with-ai/) and the project MapTiler agent skill in `.cursor/skills/maptiler/`.
 
 ## Setup
