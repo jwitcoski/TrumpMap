@@ -20,3 +20,6 @@ export const PREFIXES = [
   { prefix: "New ", label: "New America" },
   { prefix: "The ", label: "The America" },
 ];
+
+/** Leading space + place type, longest first. Kept after America: New York City → New America City. */
+export const SUFFIXES = [" Township", " Borough", " Village", " County", " Parish", " Town", " City"];

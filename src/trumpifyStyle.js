@@ -1,20 +1,43 @@
-import { PREFIXES } from "./prefixes.js";
+import { PREFIXES, SUFFIXES } from "./prefixes.js";
 
 export const TRUMPMAP_META = "prefix-america";
 
 /**
- * MapLibre expression: keep a known geographic prefix, replace the rest with America.
- * Unmatched names become "America".
- * Compatible with MapTiler Map Designer (GL style spec / slice + case).
+ * Keep a geographic prefix and/or a place-type suffix; replace the proper name with America.
+ * New York City → New America City. Unmatched names become "America".
  */
 export function prefixAmericaExpression(nameExpr) {
+  const startsWith = (prefix) => ["==", ["slice", ["var", "n"], 0, prefix.length], prefix];
+  const endsWith = (suffix) => [
+    "==",
+    ["slice", ["var", "n"], ["-", ["length", ["var", "n"]], suffix.length]],
+    suffix,
+  ];
+
   const branches = [];
-  for (const { prefix, label } of PREFIXES) {
-    branches.push(
-      ["==", ["slice", ["var", "n"], 0, prefix.length], prefix],
-      label,
-    );
+
+  for (const { prefix } of PREFIXES) {
+    for (const suffix of SUFFIXES) {
+      branches.push(
+        [
+          "all",
+          startsWith(prefix),
+          endsWith(suffix),
+          [">=", ["length", ["var", "n"]], prefix.length + suffix.length],
+        ],
+        ["concat", prefix.slice(0, -1), " America", suffix],
+      );
+    }
   }
+
+  for (const { prefix, label } of PREFIXES) {
+    branches.push(startsWith(prefix), label);
+  }
+
+  for (const suffix of SUFFIXES) {
+    branches.push(endsWith(suffix), ["concat", "America", suffix]);
+  }
+
   return [
     "let",
     "n",

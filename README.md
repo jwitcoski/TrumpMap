@@ -1,6 +1,6 @@
 # TrumpMap (prefix + America)
 
-Vanilla Vite app using [@maptiler/sdk](https://www.npmjs.com/package/@maptiler/sdk) `4.0.2` and **streets-v4** (`MapStyle.STREETS`). Place labels keep a geographic prefix and replace the rest with America.
+Vanilla Vite app using [@maptiler/sdk](https://www.npmjs.com/package/@maptiler/sdk) `4.0.2` and **streets-v4** (`MapStyle.STREETS`). Place labels keep a geographic prefix and a place type such as **City** (New York City → New America City). Unmatched names become America.
 
 **Live:** [https://jwitcoski.github.io/TrumpMap/](https://jwitcoski.github.io/TrumpMap/)
 
